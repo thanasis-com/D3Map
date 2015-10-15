@@ -1,0 +1,12 @@
+    .subunit.SCT { fill: #ddc; }
+    .subunit.WLS { fill: #cdd; }
+    .subunit.NIR { fill: #cdc; }
+    .subunit.ENG { fill: #dcd; }
+    .subunit.IRL { fill: #FFFFFF }
+    
+    .subunit-label {
+    fill: #777;
+    fill-opacity: .5;
+    font-size: 30px;
+    font-weight: 300;
+    text-anchor: middle;}
