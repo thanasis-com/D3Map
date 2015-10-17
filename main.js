@@ -45,7 +45,7 @@ d3.json("uk.json", function(error, uk) {
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<strong>Frequency:</strong> <span style='color:red'>" + d.Population + "</span>";
+      return "<strong>Town:</strong> <span style='color:#C0C0C0'>" + d.Town + "</span>" + "<br>" + "<strong>County:</strong> <span style='color:#C0C0C0'>" + d.County + "</span>" + "<br>" + "<strong>Population:</strong> <span style='color:#C0C0C0'>" + d.Population + "</span>";
   })
   
   svg.call(tip);
@@ -57,7 +57,7 @@ d3.json("uk.json", function(error, uk) {
     .data(places)
   .enter().append("circle", ".pin")
     .attr("r", function(d){
-    return (d.Population/20000)
+    return (6)
     })
     .attr("transform", function(d) {
       return "translate(" + projection([
@@ -65,9 +65,6 @@ d3.json("uk.json", function(error, uk) {
         d.lat
       ]) + ")"
     })
-    .on( "click", function(){
-    d3.select(this).remove();
-  })
   .on('mouseover', tip.show)
   .on('mouseout', tip.hide);
   
@@ -83,9 +80,8 @@ d3.json("uk.json", function(error, uk) {
       ]) + ")"; })
     .attr("dy", ".35em")
     .text(function(d) { return d.Town; })
-    .on( "click", function(){
-    d3.select(this).remove();
-  });
+  .on('mouseover', tip.show)
+  .on('mouseout', tip.hide);
   
     })
     
@@ -100,8 +96,5 @@ d3.json("uk.json", function(error, uk) {
 
 });
 
-//function to refresh the map to display the new number of cities
-function refreshMap() {
-    //document.getElementById("noc").value = "Johnny Bravo";
     
-}
+
